@@ -4,9 +4,9 @@
 
 struct deck_t {
    int topdeck;
-   struct card_t[30];
+   struct card_t;
 
-}
+};
 
 int push_card (struct card_t card_to_push, struct deck_t* player_deck);
 

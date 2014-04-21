@@ -12,5 +12,5 @@ int attack(struct card_t *attacker, struct card_t *defender) {
 }
 
 void print_card(struct card_t card){
-	printf(" Card %s[l= %d, a= %u, c= %u]\n", card.name, card.life, card.attack, card.mana_cost);
+	printf (" Card %s[l= %d, a= %u, c= %u]\n", card.name, card.life, card.attack, card.mana_cost);
 }

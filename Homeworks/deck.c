@@ -11,7 +11,7 @@ int push_card(struct card_t card_to_push, struct deck_t *player_deck)
 	{
 		return 0;
 	}
-}
+};
 
 int draw_card(struct deck_t *player_deck,struct card_t *card)
 {
@@ -24,7 +24,7 @@ int draw_card(struct deck_t *player_deck,struct card_t *card)
 	{
 	return 1;
 	}
-}
+};
 
 int look_card(struct deck_t *player_deck,struct card_t card) 
 {
@@ -37,4 +37,4 @@ int look_card(struct deck_t *player_deck,struct card_t card)
 	{
 	return 1;
 	}
-}
+};
