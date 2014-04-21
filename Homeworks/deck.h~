@@ -1,0 +1,17 @@
+#ifndef deck
+#define deck
+#include "card.h"
+
+struct deck_t {
+   int topdeck;
+   struct card_t[30];
+
+}
+
+Int push_card (struct card_t card_to_push, struct deck_t* player_deck);
+
+Int draw_card (struct deck_t* player_deck, struct card_t*card);
+
+Int look_card (struct deck_t*player_deck, struct card_t card);
+
+#endif
