@@ -1,17 +1,21 @@
-#ifndef deck
-#define deck
+#ifndef DECK_H_
+#define DECK_H_
+
+#define MAX_CARD_IN_DECK 30
+
 #include "card.h"
 
 struct deck_t {
    int topdeck;
-   struct card_t;
-
+   struct card_t cards[MAX_CARD_IN_DECK];
 };
 
-int push_card (struct card_t card_to_push, struct deck_t* player_deck);
+void init_deck (struct deck_t *deck);
 
-int draw_card (struct deck_t* player_deck, struct card_t*card);
+int push_card (struct card_t card, struct deck_t *deck);
 
-int look_card (struct deck_t*player_deck, struct card_t card);
+int draw_card (struct deck_t *deck, struct card_t *card);
+
+int look_card (struct deck_t *deck, struct card_t *card);
 
 #endif

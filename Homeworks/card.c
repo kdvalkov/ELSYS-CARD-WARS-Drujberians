@@ -1,4 +1,5 @@
 #include "card.h"
+#include <stdio.h>
 
 int attack(struct card_t *attacker, struct card_t *defender) {
 	defender->life -= attacker->attack;
@@ -8,6 +9,7 @@ int attack(struct card_t *attacker, struct card_t *defender) {
 	
 	result += defender->life > 0 ? 1 : 0;
 	result += attacker->life > 0 ? 2 : 0;
+
 	return result;
 }
 

@@ -1,40 +1,33 @@
+#include <string.h>
 #include "deck.h"
 
-int push_card(struct card_t card_to_push, struct deck_t *player_deck)
-{
-	if (player_deck-> topdeck < 30)
-	{
-		player_deck -> card[player_deck->topdeck++] = card_to_push;
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
-};
+void init_deck (struct deck_t *deck) {
+	memset(deck, 0, sizeof(struct deck_t));	
+}
 
-int draw_card(struct deck_t *player_deck,struct card_t *card)
+int push_card(struct card_t card, struct deck_t *deck)
 {
-	if (player_deck -> topdeck > 0)
-	{
-		*card = player_deck->card[--(player_deck->cards)];
-		return 0;
+	if(deck->topdeck >= MAX_CARD_IN_DECK){
+	return -1;
 	}
-	else
-	{
-	return 1;
-	}
-};
+	
+	deck->cards[deck->topdeck++] = card;
+	return 0;
+}
 
-int look_card(struct deck_t *player_deck,struct card_t card) 
-{
-	if (player_deck -> topdeck > 0)
-	{
-		Card = player_deck->card[player_deck->cards-1];
-		return 0;
+
+int draw_card(struct deck_t *deck,struct card_t *card) {
+	int result = look_card(deck, card);
+	if(result == 0)
+	deck->topdeck--;
+	return result;
+
+}
+
+int look_card(struct deck_t *deck,struct card_t *card) {
+	if(deck->topdeck <= 0) {
+	return -1;
 	}
-	else
-	{
-	return 1;
-	}
-};
+	*card = deck->cards[deck->topdeck - 1];
+	return 0;
+}

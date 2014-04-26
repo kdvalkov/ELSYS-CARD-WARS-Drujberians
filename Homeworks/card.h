@@ -3,7 +3,7 @@
 
 struct card_t {
 	
-	char* name;
+	char *name;
 	int life;
 	unsigned int attack;
 	unsigned int mana_cost;

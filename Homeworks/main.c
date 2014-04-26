@@ -1,25 +1,33 @@
 #include <stdio.h>
 #include "card.h"
+#include "deck.h"
 
 int main() {
 	
-	struct card_t first = {"Robi", 128, 65, 0};
-	struct card_t second = {"Oliver", 2, 127, 1};
-	struct card_t third = {"Cherna_pechka", 129, 64, 5};
+	struct card_t first = {"Robi", 300, 65, 30};
+	struct card_t second = {"Oliver", 15, 299, 15};
+	struct card_t third = {"Cherna_pechka", 300, 125, 35};
 	
-	print_card(first);
-	print_card(second);
+	struct deck_t myDeck;
+	init_deck(&myDeck);
+	push_card(first, &myDeck);
+	push_card(second, &myDeck);
+	push_card(third, &myDeck);
 	
-	int result = attack(&first, &second);
+	struct card_t topCard;
 	
-	printf("result = %d\n", result);
+	if(look_card(&myDeck, &topCard) == 0) {
+		print_card(topCard);
+	}
 	
-	print_card(first);
-	print_card(third);
-	
-	result = attack(&first, &third);
-	
-	printf("result = %d\n", result);
+	if(draw_card(&myDeck, &topCard) == 0) {
+	struct card_t almostTopCard;
+	if(draw_card(&myDeck, &almostTopCard) == 0) {
+			printf("Result = %d\n", attack(&topCard, &almostTopCard));
+			print_card(almostTopCard);
+			print_card(topCard);
+		}
+	}
 	
 	return 0;
 }
