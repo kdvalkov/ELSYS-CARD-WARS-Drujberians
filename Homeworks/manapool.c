@@ -14,3 +14,6 @@ int change_mana(struct manapool_t *pool,int remove) {
 pool-> mana += remove; 
 /* if(pool -> mana > __MANAPOOL__) pool -> mana = __MANAPOOL__; */
 }
+int main() {
+return 0;
+}

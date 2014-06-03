@@ -31,3 +31,7 @@ int look_card(struct deck_t *deck,struct card_t *card) {
 	*card = deck->cards[deck->topdeck - 1];
 	return 0;
 }
+
+int main() {
+return 0;
+}

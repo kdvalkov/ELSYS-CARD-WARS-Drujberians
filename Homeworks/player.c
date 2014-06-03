@@ -8,6 +8,11 @@ push_card(card_to_use, &player -> cards_in_hand);
 }
 
 int change_hp(struct player_t *player,int change) {
+int max_health;
 player -> health += change;
 if (player -> health > max_health) player -> health = max_health;
+}
+
+int main() {
+return 0;
 }
